@@ -11,9 +11,9 @@ namespace PaymentContext.Tests
         {
             Subscription subscrition = new Subscription(null);
 
-            Student student = new Student("Joao", "Pedro", "01886049602", "jpkabral@live.com");
+            //Student student = new Student("Joao", "Pedro", "01886049602", "jpkabral@live.com");
 
-            student.AddSubscription(subscrition);
+            //student.AddSubscription(subscrition);
         }
     }
 }
