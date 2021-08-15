@@ -1,4 +1,5 @@
-﻿using PaymentContext.Shared;
+﻿using Flunt.Validations;
+using PaymentContext.Shared;
 
 namespace PaymentContext.Domain.ValueObjects
 {
@@ -8,6 +9,15 @@ namespace PaymentContext.Domain.ValueObjects
         {
             FirsName = firsName;
             LastName = lastName;
+
+            if (string.IsNullOrEmpty(FirsName))
+                AddNotification("Name.FirstName", "Nome Invalido");
+
+            AddNotifications(new Contract()
+              .IsLowerThan(FirsName, 40, "FirstName", "Name should have no more than 40 chars")
+              .IsGreaterThan(FirsName, 3, "FirstName", "Name should have at least 3 chars")
+  );
+
         }
 
         public string FirsName { get; private set; }
