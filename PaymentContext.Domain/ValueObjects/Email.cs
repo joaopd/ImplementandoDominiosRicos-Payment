@@ -5,13 +5,21 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Email : ValueObject
     {
-        public Email(string addres)
+        public Email(string address)
         {
-            Addres = addres;
+            Address = address;
 
-            AddNotifications(new Contract());
+            AddNotifications(new CreateEmailContract(this));
         }
 
-        public string Addres { get; private set; }
+        public string Address { get; private set; }
+    }
+    public class CreateEmailContract : Contract<Email>
+    {
+        public CreateEmailContract(Email email)
+        {
+            Requires()
+                .IsEmail(email.Address, "Email");
+        }
     }
 }
