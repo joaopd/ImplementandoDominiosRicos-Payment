@@ -23,7 +23,9 @@ namespace PaymentContext.Domain.ValueObjects
         {
             Requires()
               .IsLowerThan(name.FirsName, 40, "FirstName", "Name should have no more than 40 chars")
-              .IsGreaterThan(name.FirsName, 3, "FirstName", "Name should have at least 3 chars");
+              .IsGreaterThan(name.FirsName, 3, "FirstName", "Name should have at least 3 chars")
+              .IsLowerThan(name.LastName, 40, "FirstName", "Name should have no more than 40 chars")
+              .IsGreaterThan(name.LastName, 3, "FirstName", "Name should have at least 3 chars");
         }
     }
 }
