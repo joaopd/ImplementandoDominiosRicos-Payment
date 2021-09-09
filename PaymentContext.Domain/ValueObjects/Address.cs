@@ -31,7 +31,7 @@ namespace PaymentContext.Domain
         public CreateAddressContract(Address address)
         {
             Requires()
-              .IsLowerThan(address.Street, 40, "Street", "Street should have no more than 40 chars");           
+              .IsLowerThan(address.Street, 40, "Street", "Street should have no more than 40 chars");
         }
     }
 }

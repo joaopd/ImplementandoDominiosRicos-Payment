@@ -1,16 +1,9 @@
-﻿using Flunt.Notifications;
-using PaymentContext.Domain.Enums;
-using PaymentContext.Domain.ValueObjects;
-using PaymentContext.Shared;
+﻿using PaymentContext.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PaymentContext.Domain.Commands
 {
-    public class CreateBoletoSubscriptionCommand 
+    public class CreateBoletoSubscriptionCommand
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -40,7 +33,7 @@ namespace PaymentContext.Domain.Commands
 
         public void validate()
         {
-         
+
         }
     }
 }
